@@ -7,20 +7,19 @@ function DateTime(){
 function greetings(){                    //Function for showing greetings Gm,Ge,Gn
 	var today=new Date();
 	var hr=today.getHours();
-	if (hr>4 && hr<13) {
-		message="Good Morning";
+	if (hr>=0 && hr<6) {
+		message="Good Night";
 	}
-	else if (hr>13 && hr<18 ) {
-			message="Good Afternoon";
+	else if (hr>=6 && hr<12 ) {
+			message="Good Morning";
 	}
-	else if (hr>18 && hr<23 ) {
-			message="Good Evening";
+	else if (hr>=12 && hr<18 ) {
+			message="Good AfterNoon";
 	}
-	else{
-		message="Good night";
+	else {
+		message="Good Evening";
 	}
 	document.getElementById("message").innerHTML=message;
-	updateGreetings("message",3600000);
 }
 
 function getTime(){                     //function to Get time
@@ -28,6 +27,13 @@ function getTime(){                     //function to Get time
 	var hr=today.getHours();
 	var min=today.getMinutes();
 	var sec=today.getSeconds();
+	if (hr==0 && min==0 && sec==1) {
+		getDate();
+	}
+
+	if(hr%6==0 && min==0 && sec==0){
+		greetings();
+	}
 	var ap="AM";
 	if(hr==0){
 		hr=12;
@@ -63,22 +69,14 @@ function getDate(){								//function to get current Date
     var curYear = today.getFullYear();
     var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
     document.getElementById("date").innerHTML = date;
-    updateDate("date",3600000)
-}
-
-
-//functions to update all functions within certain interval
-
-function updateGreetings(id,timeInterval){
-	setTimeout(greetings,timeInterval);
+    return;
+    
 }
 
 function updateTime(id,timeInterval){
 	setTimeout(getTime,timeInterval);
 }
-function updateDate(id,timeInterval){
-	setTimeout(getDate,timeInterval);
-}
+
 
 
 

@@ -37,7 +37,7 @@ section{
 	padding-top: 20px;
 }
 
-#msg:after{
+#message:after{
 	content: '';
 	width: 6%;
 	height: 5px;
