@@ -1,0 +1,50 @@
+body{
+	margin: 0px 0px;
+}
+
+*{
+	padding: 0px 0px;
+	box-sizing: border-box;
+}
+
+section{
+	font-family: sans-serif;
+	background-color: #6161bf;
+	height: 600px;
+	padding-top: 100px;
+
+}
+
+.style{
+	width: 100%;
+	color: white;
+	text-align: center;
+}
+
+#clock {
+	margin-top: 20px;
+	font-size: 120px;	
+}
+
+#message{
+	font-size: 80px;
+	position: relative;
+	padding-bottom: 35px;
+}
+
+#date{
+	font-size: 50px;
+	padding-top: 20px;
+}
+
+#msg:after{
+	content: '';
+	width: 6%;
+	height: 5px;
+	background-color: #eae6de;
+	bottom: 0;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+
+}
