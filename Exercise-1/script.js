@@ -4,7 +4,7 @@ function DateTime(){
 	getDate();
 }
 
-function greetings(){
+function greetings(){                    //Function for showing greetings Gm,Ge,Gn
 	var today=new Date();
 	var hr=today.getHours();
 	if (hr>4 && hr<13) {
@@ -23,7 +23,7 @@ function greetings(){
 	updateGreetings("message",3600000);
 }
 
-function getTime(){
+function getTime(){                     //function to Get time
 	var today=new Date();
 	var hr=today.getHours();
 	var min=today.getMinutes();
@@ -45,7 +45,7 @@ function getTime(){
 	updateTime("clock",1000);
 }
 
-function checkTime(i) {
+function checkTime(i) {                         //function to check time and add prefix "0" if single digit
 	if(i<10){
 		i="0"+i;
 	}
@@ -53,7 +53,7 @@ function checkTime(i) {
 }
 
 
-function getDate(){	
+function getDate(){								//function to get current Date
 	var today=new Date();
 	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -66,15 +66,18 @@ function getDate(){
     updateDate("date",3600000)
 }
 
+
+//functions to update all functions within certain interval
+
 function updateGreetings(id,timeInterval){
-	setInterval(greetings,timeInterval);
+	setTimeout(greetings,timeInterval);
 }
 
 function updateTime(id,timeInterval){
-	setInterval(getTime,timeInterval);
+	setTimeout(getTime,timeInterval);
 }
 function updateDate(id,timeInterval){
-	setInterval(getDate,timeInterval);
+	setTimeout(getDate,timeInterval);
 }
 
 
