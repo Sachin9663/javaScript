@@ -27,7 +27,7 @@ function getTime(){                     //function to Get time
 	var hr=today.getHours();
 	var min=today.getMinutes();
 	var sec=today.getSeconds();
-	if (hr==0 && min==0 && sec==1) {
+	if (hr==0 && min==0 && sec==0) {
 		getDate();
 	}
 
